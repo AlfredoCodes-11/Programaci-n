@@ -3,12 +3,12 @@ package Tema1;
 public class horario {
     public static void main(String[] args) {
         System.out.println("Lunes\t\tMartes\t\tMiércoles\tJueves\t\tViernes");
-        System.out.println("PROGR\t\tSIINF\t\tBADAT\t\tSIINF\t\tPROGR");
-        System.out.println("PROGR\t\tSIINF\t\tBADAT\t\tBADAT\t\tPROGR");
-        System.out.println("PROGR\t\tENDES\t\tIPE I\t\tBADAT\t\tBADAT");
-        System.out.println("SIINF\t\tENDES\t\tIPE I\t\tPROGR\t\tBADAT");
-        System.out.println("SIINF\t\tENDES\t\tIPE I\t\tPROGR\t\tLMSGI");
-        System.out.println("LMSGI\t\tDASPGS\t\tSASP\t\tPROGR\t\tLMSGI");
+        System.out.println("\033[31mPROGR\t\t\033[32mSIINF\t\t\033[35mBADAT\t\t\033[32mSIINF\t\t\033[31mPROGR");
+        System.out.println("\033[31mPROGR\t\t\033[32mSIINF\t\t\033[35mBADAT\t\t\033[35mBADAT\t\t\033[31mPROGR");
+        System.out.println("\033[31mPROGR\t\t\033[34mENDES\t\t\033[33mIPE I\t\t\033[35mBADAT\t\t\033[35mBADAT");
+        System.out.println("\033[32mSIINF\t\t\033[34mENDES\t\t\033[33mIPE I\t\t\033[31mPROGR\t\t\033[35mBADAT");
+        System.out.println("\033[32mSIINF\t\t\033[34mENDES\t\t\033[33mIPE I\t\t\033[31mPROGR\t\t\033[30mLMSGI");
+        System.out.println("\033[30mLMSGI\t\t\033[36mDASPGS\t\t\033[39mSASP\t\t\033[31mPROGR\t\t\033[30mLMSGI \033[0m");
     }
     
 }
