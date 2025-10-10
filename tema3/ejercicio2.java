@@ -1,14 +1,20 @@
 package tema3;
 
+import java.util.Scanner;
+
 public class ejercicio2 {
     public static void main(String[] args) {
-        double euro;
-        double cambio=166.33;
-        int peseta;
-        System.out.print("Introduzca la cantidad de euros que quiere convertir:");
-         // euro=Double.parseDouble(System.console().readLine());
-        euro=System.console().readLine();
-        peseta=Integer.parseInt(euro);;
-        System.out.printf("%f euros son ");
+        double cambio = 166.386;
+        double pesetas;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Introduzca la cantidad de euros que quiere convertir: ");
+        double euros = sc.nextDouble();
+
+        pesetas = (euros * cambio);
+
+        System.out.printf("%.2f euros son %.0f pesetas.", euros, pesetas);
+
     }
 }

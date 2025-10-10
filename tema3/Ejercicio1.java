@@ -1,6 +1,6 @@
 package tema3;
 
-public class Ejercicio1 {
+public class ejercicio1 {
     public static void main(String[] args) {
         int num1;
         int num2;
