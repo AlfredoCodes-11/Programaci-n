@@ -1,10 +1,12 @@
 package tema3;
+import java.util.Locale;
 import java.util.Scanner;
 public class ejercicio4 {
     public static void main(String[] args) {
         float num1;
         float num2;
-        Scanner sc = new Scanner(System.in);
+        // .useLocale para usar el idioma ingles
+        Scanner sc = new Scanner(System.in).useLocale(Locale.ENGLISH);
         System.out.print("Introduzca el primer número: ");
         num1 = sc.nextFloat();
         System.out.print("Introduzca el segundo número: ");
