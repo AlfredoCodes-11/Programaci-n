@@ -19,13 +19,13 @@ public class ejercicio41 {
         dia = sc.nextInt();
 
         switch (dia) {
-            case 1: System.out.println("Lamentamos que no esté satisfecho. ¡Trabajaremos para mejorar!");
+            case 1,2,3,4,5: System.out.println("Es un dia entre semana");
                 break;
-            case 2: System.out.println("Gracias por su opinión");
+            case 6: System.out.println("Es fin de semana");
                 break;
-            case 3: System.out.println("Gracias por su opinión. Estamos muy contetos.");
+            case 7: System.out.println("Es fin de semana");
                 break;
-            default: System.out.println("Esa nota no es válida");
+            default: System.out.println("No es un día válido");
         }
     }            
 }
