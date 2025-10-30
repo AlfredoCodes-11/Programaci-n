@@ -7,17 +7,37 @@ public class ejercicio8 {
         float a;
         float b;
         float c;
+        float totalPosi;
+        float totalNega;
+        float raiz;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Este programa resuelve ecuaciones de segundo grado.");
-        System.out.println("\nax2+bx=0");
-        System.out.println("\nIntroduce los valores: ");
-        System.out.println("\na = ");
+        System.out.println("ax2 + bx = 0");
+        System.out.println("Introduce los valores: ");
+        System.out.print("a = ");
         a=sc.nextFloat();
-        System.out.println("b = ");
+        System.out.print("b = ");
         b=sc.nextFloat();
-        System.out.println("c = ");
+        System.out.print("c = ");
         c=sc.nextFloat();
-        total
+
+        totalPosi= (float) ((-b+Math.sqrt((b*b)-4*a*c))/(2*a));
+        totalNega= (float) ((-b-Math.sqrt((b*b)-4*a*c))/(2*a));
+        raiz= (float) ((b*b)-4*a*c);
+
+        if (a==0 && b==0 && c==0) {
+            System.out.println("La ecuación tiene infinitas soluciones.");
+        } else if (a==0 && b==0) {
+            System.out.println("La ecuación no tiene solución.");
+        } else if (c==0) {
+            System.out.printf("x1 = %.1f",totalPosi);
+            System.out.printf("\nx2 = %.1f",totalNega);
+        } else if (raiz < 0) {
+            System.out.println("La ecuación no tiene soluciones reales.");
+        } else {
+            System.out.printf("x1 = %.1f",totalPosi);
+            System.out.printf("\nx2 = %.1f",totalNega);
+        }
     }
 }
