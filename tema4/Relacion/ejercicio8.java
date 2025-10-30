@@ -1,5 +1,6 @@
 package tema4.Relacion;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ejercicio8 {
@@ -10,10 +11,10 @@ public class ejercicio8 {
         float totalPosi;
         float totalNega;
         float raiz;
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in).useLocale(Locale.ENGLISH);
 
         System.out.println("Este programa resuelve ecuaciones de segundo grado.");
-        System.out.println("ax2 + bx = 0");
+        System.out.println("ax\u00B2 + bx = 0");
         System.out.println("Introduce los valores: ");
         System.out.print("a = ");
         a=sc.nextFloat();
