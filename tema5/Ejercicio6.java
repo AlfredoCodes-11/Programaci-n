@@ -11,13 +11,12 @@ public class Ejercicio6 {
         System.out.print("Introduzca un número y le diré cuántos dígitos tiene: ");
         numero=Long.parseLong(System.console().readLine());
 
-        numero1= numero;
-        while (numero1 > 10){
+        numero1= Math.abs(numero);
+        while (numero1 >= 10){
             digitos++;
             numero1/=10;
         }
 
         System.out.printf("%d tiene %d digito/s",numero,digitos);
-
     }
 }

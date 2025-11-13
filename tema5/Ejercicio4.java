@@ -4,11 +4,29 @@ public class Ejercicio4 {
     public static void main(String[] args) {
         
         final int CLAVE=4563;
-        int intento=0;
+        int intento;
         int oportunidad=4;
 
 
-        while (oportunidad>0 && intento!=CLAVE){
+
+        do {
+            System.out.print("Introduce la clave de la caja fuerte: ");
+            intento=Integer.parseInt(System.console().readLine());
+            oportunidad--;
+
+            if (intento != CLAVE){
+                System.out.println("Clave incorrecta");
+            }
+        } while (oportunidad>0 && intento!=CLAVE);
+
+        if (intento != CLAVE){
+            System.out.println("Lo siento, ha agotado las 4 oportunidades.");
+        } else {
+            System.out.println("\033[1m\033[31mSe ha abierto la caja fuerte\033[0m");
+        }
+
+
+        /*while (oportunidad>0 && intento!=CLAVE){
             System.out.print("Introduce la clave de la caja fuerte: ");
             intento=Integer.parseInt(System.console().readLine());
             if (intento!=CLAVE){
@@ -22,6 +40,6 @@ public class Ejercicio4 {
         } else {
             System.out.println("Lo siento, ha agotado las 4 oportunidades.");
             System.out.println("Se ha emitido un aviso a la policía.");
-        }
+        }*/
     }
 }

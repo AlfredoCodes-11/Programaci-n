@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio9",
+            "request": "launch",
+            "mainClass": "tema5.Ejercicio9",
+            "projectName": "Programación_1b24e8a7"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio25",
+            "request": "launch",
+            "mainClass": "tema5.Ejercicio25",
+            "projectName": "Programación_1b24e8a7"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio4",
+            "request": "launch",
+            "mainClass": "tema5.Ejercicio4",
+            "projectName": "Programación_1b24e8a7"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio11",
+            "request": "launch",
+            "mainClass": "tema5.Ejercicio11",
+            "projectName": "Programación_1b24e8a7"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio10",
+            "request": "launch",
+            "mainClass": "tema5.Ejercicio10",
+            "projectName": "Programación_1b24e8a7"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio7",
             "request": "launch",
             "mainClass": "tema5.Ejercicio7",
