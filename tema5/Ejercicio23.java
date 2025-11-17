@@ -7,6 +7,9 @@ public class Ejercicio23 {
         int digito;
         int posicion = 1;
         int volteado=0;
+        int longitud=0;
+
+        // String.valueOf
 
         try {
             System.out.print("Introduzca un número entero: ");
@@ -21,10 +24,14 @@ public class Ejercicio23 {
             while (numero > 0) {
                 volteado = (volteado*10) + (numero%10);
                 numero /= 10;
+                longitud++;
             }
 
+            // calcular la longitud del número
+            // longitud
+
             // calculamos posiciones
-            while (volteado > 0) {
+            for ( ; longitud > 0; longitud--) {
                 if (volteado%10 == digito) {
                     System.out.printf("%d ",posicion);
                 }
