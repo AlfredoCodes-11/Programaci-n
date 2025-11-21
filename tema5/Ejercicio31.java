@@ -40,45 +40,28 @@ public class Ejercicio31 {
             }*/
 
             // construimos los números
-            while (primero > 0 && segundo > 0) {
-                digito = (int) (primero%10);
-                primero /=10;
+            while (primero > 0 || segundo > 0) {
 
-                if (digito%2==0) {
-                numerosPar = (numerosPar*10) + digito;
-                } else {
-                numerosImpar = (numerosImpar*10) + digito;
+                if (primero>0) {
+                    digito = (int) (primero%10);
+                    primero /=10;
+
+                    if (digito%2==0) {
+                        numerosPar = (numerosPar*10) + digito;
+                    } else {
+                        numerosImpar = (numerosImpar*10) + digito;
+                    }
                 }
 
-                digito = (int) (segundo%10);
-                segundo /=10;
+                if (segundo>0){
+                    digito = (int) (segundo%10);
+                    segundo /=10;
 
-                if (digito%2==0) {
-                numerosPar = (numerosPar*10) + digito;
-                } else {
-                numerosImpar = (numerosImpar*10) + digito;
-                }
-            }
-
-            while (primero > 0) {
-                digito = (int) (primero%10);
-                primero /=10;
-
-                if (digito%2==0) {
-                numerosPar = (numerosPar*10) + digito;
-                } else {
-                numerosImpar = (numerosImpar*10) + digito;
-                }
-            }
-            
-            while (segundo > 0) {
-                digito = (int) (segundo%10);
-                segundo /=10;
-
-                if (digito%2==0) {
-                numerosPar = (numerosPar*10) + digito;
-                } else {
-                numerosImpar = (numerosImpar*10) + digito;
+                    if (esPar(digito)) {
+                        numerosPar = (numerosPar*10) + digito;
+                    } else {
+                        numerosImpar = (numerosImpar*10) + digito;
+                    }
                 }
             }
 
@@ -111,5 +94,23 @@ public class Ejercicio31 {
         }
 
         return volteado;
+    }
+
+
+
+    /**
+     * @param numero
+     * @return
+     */
+
+    public static boolean esPar(int numero) {
+
+        // boolean par;
+
+        //if (numero%2==0) {
+        //   par = true;
+        //}
+
+        return numero%2==0;
     }
 }
