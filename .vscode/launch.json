@@ -6,6 +6,69 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio6",
+            "request": "launch",
+            "mainClass": "tema7.Ejercicio6",
+            "projectName": "Programaci-n_1b24d0ad"
+        },
+        {
+            "type": "java",
+            "name": "Graphify",
+            "request": "launch",
+            "mainClass": "Graphify",
+            "projectName": "Programaci-n_1b24d0ad"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio5",
+            "request": "launch",
+            "mainClass": "tema7.Ejercicio5",
+            "projectName": "Programaci-n_1b24d0ad"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio3",
+            "request": "launch",
+            "mainClass": "tema7.Ejercicio3",
+            "projectName": "Programaci-n_1b24d0ad"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio2",
+            "request": "launch",
+            "mainClass": "tema7.Ejercicio2",
+            "projectName": "Programaci-n_1b24d0ad"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio1",
+            "request": "launch",
+            "mainClass": "tema7.Ejercicio1",
+            "projectName": "Programaci-n_1b24d0ad"
+        },
+        {
+            "type": "java",
+            "name": "Arrays",
+            "request": "launch",
+            "mainClass": "tema7.Arrays",
+            "projectName": "Programaci-n_1b24d0ad"
+        },
+        {
+            "type": "java",
+            "name": "MazmorraDelDestino",
+            "request": "launch",
+            "mainClass": "EjercicioJuego.MazmorraDelDestino",
+            "projectName": "Programaci-n_1b24d0ad"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio23",
+            "request": "launch",
+            "mainClass": "tema5.Ejercicio23",
+            "projectName": "Programaci-n_1b24d0ad"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio1",
             "request": "launch",
             "mainClass": "tema8.Ejercicio1",
