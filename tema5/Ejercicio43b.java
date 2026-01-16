@@ -10,6 +10,7 @@ public class Ejercicio43b {
 
         int lado;
         int temporal;
+        int incremento =-2;
 
 
         Scanner entrada = new Scanner(System.in);
@@ -18,7 +19,7 @@ public class Ejercicio43b {
         
         System.out.println(BORRAR);
 
-        System.out.printf("Introduce la anchura máxima del cuadrado (como mínimo 3): ");
+        System.out.printf("Introduce la anchura máxima del cuadrado (como mínimo %d): ",MINIMO);
         lado = entrada.nextInt();
 
         temporal = lado;
@@ -27,19 +28,19 @@ public class Ejercicio43b {
             System.out.println("Lo siento, los datos introducidos no son correctos, el valor mínimo para la anchura y altura es 2.");
         } else {
             while (true) {
-                do {
-                    dibujarCuadrado(lado);
-                    Thread.sleep(100);
-                    System.out.print(BORRAR);
-                    lado--;
-                } while (lado >=MINIMO);
+        
+                dibujarCuadrado(lado, elegirColor());
+                Thread.sleep(100);
+                System.out.print(BORRAR);
+                lado+= incremento;
 
-                do {
-                    dibujarCuadrado(lado);
-                    Thread.sleep(100);
-                    System.out.print(BORRAR);
-                    lado++;
-                } while (lado < temporal);
+                if ( lado == MINIMO) {
+                    incremento=1;
+                }
+
+                if (lado == temporal) {
+                    incremento =-1;
+                }
             }
         }
 
@@ -49,7 +50,9 @@ public class Ejercicio43b {
 
     }
 
-    public static void dibujarCuadrado(int lado) {
+    public static void dibujarCuadrado(int lado, int color) {
+
+        System.out.printf("\033[%dm", color);
 
         for (int j=0; j < lado; j++) {
             for (int i=0; i < lado; i++) {
@@ -63,4 +66,7 @@ public class Ejercicio43b {
             System.out.println("");
         }
     }
+    public static int elegirColor(){
+            return (int) (Math.random()* (37-32+1)+32);
+        }
 }
