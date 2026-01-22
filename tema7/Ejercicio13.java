@@ -7,7 +7,16 @@ import java.util.Scanner;
 
 
             Scanner sc = new Scanner(System.in);
+
+            final int MAXIMOFILA=3;
+            final int MAXIMOCOLUMNA=3;
+
             boolean salir = false;
+            
+
+            int filas;
+            int columnas;
+            int totalElementos;
 
             int[][] tabla = {
                 { 8, -12, 33 },
@@ -17,34 +26,30 @@ import java.util.Scanner;
 
             int posicion;
 
-            while (!salir) {
+           
 
-                System.out.print("\nIntroduce el elemento a visualizar (-1 para salir): ");
+                System.out.print("Introduce el elemento a visualizar (0 - 8): ");
                 posicion = sc.nextInt();
 
-                if (posicion == -1) {
-                    salir = true;
-                    System.out.println("Programa finalizado.");
-                }
 
-                if (!salir) {
+                
 
-                    int filas = tabla.length;
-                    int columnas = tabla[0].length;
-                    int totalElementos = filas * columnas;
+                filas = MAXIMOFILA;
+                columnas = MAXIMOCOLUMNA;
+                totalElementos = filas * columnas;
 
-                    if (posicion >= 0 && posicion < totalElementos) {
+                if (posicion >= 0 && posicion < totalElementos) {
 
-                        int fila = posicion / columnas;
-                        int columna = posicion % columnas;
+                    filas = posicion / columnas;
+                    columnas = posicion % columnas;
 
-                        System.out.println("Elemento " + posicion + " = " + tabla[fila][columna]);
+                    System.out.println("Elemento " + posicion + " = " + tabla[filas][columnas]);
 
                     } else {
                        System.out.println("Posición fuera de rango.");
                     }
-                }
-            }
+                
+            
 
             sc.close();
         }

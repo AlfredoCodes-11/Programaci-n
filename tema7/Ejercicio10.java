@@ -8,9 +8,12 @@ public class Ejercicio10 {
     public static int[] mesas = new int[MAXIMO];
     public static void main(String[] args) {
         
+        boolean salir = false;
         boolean sentados = false;
         int n =0;
         int z =0;
+        int l =0;
+
 
         for (int i = 0; i < MAXIMO; i++){
             mesas[i]=(int)(Math.random()*5);
@@ -39,11 +42,13 @@ public class Ejercicio10 {
         }*/
 
         dibujarMesas(mesas);
+        while (!salir){
             System.out.print("\n¿Cuántos son? (Introduzca -1 para salir del programa): ");
             grupos=Integer.parseInt(System.console().readLine());
-
+        
             if (grupos==-1){
                 System.out.println("Gracias. Hasta pronto.");
+                salir=true;
             } else if (grupos>MAXGRUPOS){
                 System.out.printf("Lo siento, no admitimos grupos de %d, haga grupos de %d personas como máximo e intente de nuevo.",grupos,MAXGRUPOS);
             } /*else {
@@ -61,8 +66,8 @@ public class Ejercicio10 {
                     }
                 }
             } */
-
-            while (z < mesas.length && !sentados) {
+            if (!salir){
+            while (z < MAXIMO && !sentados) {
                 if (mesas[z] == 0) {
                     mesas[z] += grupos;
                     System.out.println("Por favor, siéntense en la mesa número " + (z + 1) + ".");
@@ -71,8 +76,10 @@ public class Ejercicio10 {
                 }
                 z++;
             }
+            z=0;
+            
 
-            while (n < mesas.length && !sentados) {
+            while (n < MAXIMO && !sentados) {
                 if (mesas[n] + grupos <= 4) {
                     mesas[n] += grupos;
                     System.out.println("Tendrá que compartir mesa. Por favor , siéntese en la mesa número " + (n + 1) + ".");
@@ -81,6 +88,19 @@ public class Ejercicio10 {
                 }
                 n++;
             }
+            n=0;
+            while (l < MAXIMO && !sentados) {
+                if (mesas[l] + grupos > 4) {
+                    System.out.println("Lo sentimos, no quedan huecos para su grupo.");
+                    sentados = true;
+                    dibujarMesas(mesas);
+                }
+                l++;
+            }
+            l=0;
+            sentados=false;
+            }
+        }
            
 
         
