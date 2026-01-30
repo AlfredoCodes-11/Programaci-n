@@ -16,7 +16,7 @@ public class Ejercicio33 {
                 coleccion[i][l]=(int) ((Math.random()*70)+141);
             }
         }
-
+        
         for (int i =0; i<FILS ;i++){
             for (int l=0; l <COLS ;l++){
                 if (l==0){

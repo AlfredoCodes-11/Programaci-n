@@ -27,21 +27,33 @@ public class Ejercicio30b {
                 jugadaJugador();
                 if (hayGanador(JUGADOR)) {
                     mostrarTablero();
+<<<<<<< HEAD
                     System.out.println("¡Has ganado!");
+=======
+                    System.out.println("🎉 ¡Has ganado!");
+>>>>>>> 540e64a2631859e7556953e944b6148d32f1b2c3
                     break;
                 }
             } else {
                 jugadaMaquina();
                 if (hayGanador(MAQUINA)) {
                     mostrarTablero();
+<<<<<<< HEAD
                     System.out.println("La máquina ha ganado.");
+=======
+                    System.out.println("🤖 La máquina ha ganado.");
+>>>>>>> 540e64a2631859e7556953e944b6148d32f1b2c3
                     break;
                 }
             }
 
             if (tableroLleno()) {
                 mostrarTablero();
+<<<<<<< HEAD
                 System.out.println("Empate.");
+=======
+                System.out.println("🤝 Empate.");
+>>>>>>> 540e64a2631859e7556953e944b6148d32f1b2c3
                 break;
             }
 

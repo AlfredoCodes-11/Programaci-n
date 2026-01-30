@@ -32,11 +32,17 @@ public class Ejercicio31 {
         System.out.print("Diagonal desde la esquina supeior izquierda a la esquina inferior derecha: ");
 
         for (int i = 0; i < FILS; i++){
-            System.out.printf("%d ",coleccion[i][0+contador]);
+            System.out.printf("%d ",coleccion[i][contador]);
+            if (max < coleccion[i][contador]){
+                max = coleccion[i][contador];
+            }
+            if (min > coleccion[i][contador]){
+                min = coleccion[i][contador];
+            }
             contador ++;
         }
         
-        for (int i =0; i<FILS;i++){
+        /*for (int i =0; i<FILS;i++){
             for (int l=0; l <COLM;l++){
                 if (max < coleccion[i][l]){
                     max = coleccion[i][l];
@@ -50,7 +56,7 @@ public class Ejercicio31 {
                     min = coleccion[i][l];
                 }
             }
-        }
+        }*/
 
         System.out.printf("\nMáximo: %d", max);
         System.out.printf("\nMínimo: %d", min);
