@@ -1,4 +1,4 @@
-public class Ejercicio33 {
+public class Ejercicio33J {
     public static void main(String[] args) {
         final int FILAS = 4;
         final int COLUMNAS = 10;
