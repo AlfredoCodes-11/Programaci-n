@@ -1,106 +1,136 @@
 package tema7;
 
+import java.util.Scanner;
+
 public class BuscaTesoro {
 
+    // CONSTANTES
+    static final int FILAS = 4;
+    static final int COLUMNAS = 5;
+
+    // VARIABLES
+    static char[][] tablero;
+    static int minaX, minaY;
+    static int tesoroX, tesoroY;
+    static boolean encontrado;
+    static boolean perdido;
+
     public static void main(String[] args) {
-      
-      // se definen constantes para representar el
-      // contenido de las celdas
-      final int VACIO = 0;
-      final int MINA = 1;
-      final int TESORO = 2;
-      final int INTENTO = 3;
-      
-      
-      int x;
-      int y;
-      int[][] cuadrante = new int[5][4];
-      
-      // inicializa el array
-      for(x = 0; x < 4; x++) {
-        for(y = 0; y < 3; y++) {
-          cuadrante[x][y] = VACIO;
-        }
-      }
-      // coloca la mina
-      int minaX = (int)(Math.random() * 5);
-      int minaY = (int)(Math.random() * 4);
-      cuadrante[minaX][minaY] = MINA;
-      
-      // coloca el tesoro
-      int tesoroX;
-      int tesoroY;
-      do {
-        tesoroX = (int)(Math.random() * 5);
-        tesoroY = (int)(Math.random() * 4);
-      } while ((minaX == tesoroX) && (minaY == tesoroY));
-      cuadrante[tesoroX][tesoroY] = TESORO;
-      
-      // juego
-      System.out.println("¡BUSCA EL TESORO!");
-      boolean salir = false;
-      String c = "";
-      do {
-        // pinta el cuadrante
-        for(y = 3; y >= 0; y--) {
-          System.out.print(y + "|");  
-          for(x = 0; x < 5; x++) {
-            if (cuadrante[x][y] == INTENTO) {
-              System.out.print("X ");
+
+        Scanner sc = new Scanner(System.in);
+
+        tablero = new char[FILAS][COLUMNAS];
+        encontrado = false;
+        perdido = false;
+
+        inicializarTablero();
+        generarMinaYTesoro();
+
+        System.out.println("¡BUSCA EL TESORO!");
+
+        while (!encontrado && !perdido) {
+
+            mostrarTablero(false);
+
+            System.out.print("Coordenada x: ");
+            int x = sc.nextInt();
+
+            System.out.print("Coordenada y: ");
+            int y = sc.nextInt();
+
+            if (coordenadaValida(x, y)) {
+                comprobarJugada(x, y);
             } else {
-              System.out.print("  ");
+                System.out.println("Coordenadas fuera del tablero.");
             }
-          }
-          System.out.println();
         }
-        System.out.println("  ----------\n  0 1 2 3 4\n");
-  
-        // pide las coordenadas  
-        System.out.print("Coordenada x: ");
-        x = Integer.parseInt(System.console().readLine());
-        System.out.print("Coordenada y: ");
-        y = Integer.parseInt(System.console().readLine());
-        
-        // mira lo que hay en las coordenadas indicadas por el usuario
-        switch(cuadrante[x][y]) {
-          case VACIO:
-            cuadrante[x][y] = INTENTO;
-            break;
-          case MINA:
-            System.out.println("Lo siento, has perdido.");
-            salir = true;
-            break;
-          case TESORO:
-            System.out.println("¡Enhorabuena! ¡Has encontrado el tesoro!"); 
-            salir = true;
-            break;
-          default:
-        }
-      } while (!salir);
-  
-      // pinta el cuadrante
-      for(y = 3; y >= 0; y--) {
-        System.out.print(y + " ");
-        for(x = 0; x < 5; x++) {
-          switch(cuadrante[x][y]) {
-            case VACIO:
-              c = "  ";
-              break;
-            case MINA:
-              c = "* ";
-              break;
-            case TESORO: 
-              c = "€ ";
-              break;
-            case INTENTO:
-              c = "X ";
-              break;
-            default:
-          }
-          System.out.print(c);
-        }
-        System.out.println();    
-      }
-      System.out.println("  ----------\n  0 1 2 3 4\n");
+
+        colocarFinal();
+        System.out.println("\nTABLERO FINAL:");
+        mostrarTablero(true);
+
+        sc.close();
     }
-  }
+
+    // INICIALIZA EL TABLERO
+    static void inicializarTablero() {
+        for (int i = 0; i < FILAS; i++) {
+            for (int j = 0; j < COLUMNAS; j++) {
+                tablero[i][j] = ' ';
+            }
+        }
+    }
+
+    // GENERA POSICIONES ALEATORIAS CON Math.random()
+    static void generarMinaYTesoro() {
+
+        minaX = (int) (Math.random() * COLUMNAS);
+        minaY = (int) (Math.random() * FILAS);
+
+        do {
+            tesoroX = (int) (Math.random() * COLUMNAS);
+            tesoroY = (int) (Math.random() * FILAS);
+        } while (tesoroX == minaX && tesoroY == minaY);
+    }
+
+    // COMPRUEBA SI LA COORDENADA ES VÁLIDA
+    static boolean coordenadaValida(int x, int y) {
+        boolean valida = false;
+
+        if (x >= 0 && x < COLUMNAS && y >= 0 && y < FILAS) {
+            valida = true;
+        }
+
+        return valida;
+    }
+
+    // COMPRUEBA LA JUGADA
+    static void comprobarJugada(int x, int y) {
+
+        tablero[y][x] = 'X';
+
+        if (x == tesoroX && y == tesoroY) {
+            encontrado = true;
+            System.out.println("¡Enhorabuena! ¡Has encontrado el tesoro!");
+        } else if (x == minaX && y == minaY) {
+            perdido = true;
+            System.out.println("¡BOOM! Has encontrado la mina. Has perdido.");
+        }
+    }
+
+    // COLOCA MINA Y TESORO AL FINAL
+    static void colocarFinal() {
+        tablero[minaY][minaX] = 'M';
+        tablero[tesoroY][tesoroX] = 'T';
+    }
+
+    // MUESTRA EL TABLERO
+    static void mostrarTablero(boolean mostrarTodo) {
+
+        for (int i = FILAS - 1; i >= 0; i--) {
+            System.out.print(i + " | ");
+            for (int j = 0; j < COLUMNAS; j++) {
+
+                if (!mostrarTodo && tablero[i][j] != 'X') {
+                    System.out.print("  ");
+                } else {
+                    System.out.print(tablero[i][j] + " ");
+                }
+            }
+            System.out.println();
+        }
+
+        System.out.print("    ");
+        for (int i = 0; i < COLUMNAS; i++) {
+            System.out.print("--");
+        }
+        System.out.println();
+
+        System.out.print("     ");
+        for (int i = 0; i < COLUMNAS; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+

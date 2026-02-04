@@ -5,13 +5,12 @@ public class Ejercicio29 {
     public static final int FILS = 8;
     public static final int COLS = 8;
     public static int[][] coleccion = new int[FILS][COLS];
-    public static String posicion;
     public static int col;
     public static int fil;
     public static int letra;
     public static int numero;
-
     
+    public static String posicion;
 
     public static boolean salir=true;
     public static void main(String[] args) {
@@ -32,7 +31,7 @@ public class Ejercicio29 {
      * @param fil
      */
     public static void posiciones(int col, int fil){
-             if (fil<=FILS && col<=COLS) {
+        if (fil<=FILS && col<=COLS) {
             while (col>0 && fil<FILS-1) {
                 letra=(col--)+96;
                 numero=(fil++)+50;

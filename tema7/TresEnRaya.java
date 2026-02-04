@@ -52,6 +52,7 @@ public class TresEnRaya {
     public static void mostrarTablero() {
 
         char letras='a';
+        
         System.out.print("  ");
         for (int i = 1; i <= TAM; i++) {
             System.out.print(i + " ");
@@ -114,56 +115,60 @@ public class TresEnRaya {
 
     public static boolean hayGanador(char ficha) {
 
-        boolean ganador = true;
+        boolean ganador = false;
+        boolean lineaCompleta;
 
         // Filas
         for (int i = 0; i < TAM; i++) {
-            ganador = true;
+            lineaCompleta = true;
             for (int j = 0; j < TAM; j++) {
                 if (tablero[i][j] != ficha) {
-                    ganador = false;
+                    lineaCompleta = false;
                 }
             }
-            if (ganador) {
-                return true;
+            if (lineaCompleta) {
+                ganador = true;
             }
         }
 
         // Columnas
         for (int j = 0; j < TAM; j++) {
-            ganador = true;
+            lineaCompleta = true;
             for (int i = 0; i < TAM; i++) {
                 if (tablero[i][j] != ficha) {
-                    ganador = false;
+                    lineaCompleta = false;
                 }
             }
-            if (ganador) {
-                return true;
+            if (lineaCompleta) {
+                ganador = true;
             }
         }
 
         // Diagonal principal
-        ganador = true;
+        lineaCompleta = true;
         for (int i = 0; i < TAM; i++) {
             if (tablero[i][i] != ficha) {
-                ganador = false;
+                lineaCompleta = false;
             }
         }
-
-        if (ganador) {
-            return true;
+        if (lineaCompleta) {
+            ganador = true;
         }
 
-        // Diagonal inversa
-        ganador = true;
+        // Diagonal secundaria
+        lineaCompleta = true;
         for (int i = 0; i < TAM; i++) {
             if (tablero[i][TAM - 1 - i] != ficha) {
-                ganador = false;
+                lineaCompleta = false;
             }
+        }
+        if (lineaCompleta) {
+            ganador = true;
         }
 
         return ganador;
     }
+
 
     public static boolean tableroLleno() {
 
