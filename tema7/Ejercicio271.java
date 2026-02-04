@@ -1,9 +1,5 @@
 package tema7;
 
-<<<<<<< HEAD
-=======
-import java.util.Random;
->>>>>>> 540e64a2631859e7556953e944b6148d32f1b2c3
 import java.util.Scanner;
 
 public class Ejercicio271 {
@@ -14,15 +10,10 @@ public class Ejercicio271 {
 
 
     public static int[][] tablero;
-<<<<<<< HEAD
     public static int minaX;
     public static int minaY;
     public static int tesoroX;
     public static int tesoroY;
-=======
-    public static int minaX, minaY;
-    public static int tesoroX, tesoroY;
->>>>>>> 540e64a2631859e7556953e944b6148d32f1b2c3
     public static boolean encontrado;
     public static boolean perdido;
 
@@ -104,17 +95,10 @@ public class Ejercicio271 {
                             System.out.print("X "); 
                         break;
                         case 2: 
-<<<<<<< HEAD
                             System.out.print("* "); 
                         break;
                         case 3: 
                             System.out.print("€ "); 
-=======
-                            System.out.print("M "); 
-                        break;
-                        case 3: 
-                            System.out.print("T "); 
->>>>>>> 540e64a2631859e7556953e944b6148d32f1b2c3
                         break;
                     }
                 }
