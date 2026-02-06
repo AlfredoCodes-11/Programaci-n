@@ -2,7 +2,27 @@ package Tema9.Ejercicios.Ejercicio2.clases;
 
 public class Caballo {
     private String nombre;
+    private String sexo;
+    private String raza;
+    private int edad;
+    private float peso;
+
+    /**
+     * 
+     * @param nombre
+     * @param edad
+     * @param sexo
+     */
+    public Caballo(String nombre,int edad,String sexo){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.sexo = sexo;
+    }
     
+    /**
+     * 
+     * @param nombre
+     */
     public Caballo(String nombre){
         this.nombre = nombre;
     }

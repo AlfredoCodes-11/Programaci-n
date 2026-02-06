@@ -7,11 +7,11 @@ public class Animal {
     private int edad;
     private Sexo sexo;
 
-    Animal(String nombre){
+    public Animal(String nombre){
         this.nombre = nombre;
     }
 
-    Animal(String nombre, int edad){
+    public Animal(String nombre, int edad){
         this.nombre = nombre;
         this.edad = edad;
     }
