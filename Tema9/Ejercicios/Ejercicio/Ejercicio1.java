@@ -1,4 +1,4 @@
-package Tema9.Ejercicios;
+package Tema9.Ejercicios.Ejercicio;
 
 public class Ejercicio1 {
     /**
