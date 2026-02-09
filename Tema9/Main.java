@@ -1,6 +1,7 @@
 package Tema9;
 
 import Tema9.clases.Gato;
+import Tema9.clases.Moneda;
 import Tema9.clases.Perro;
 import Tema9.clases.Sexo;
 
@@ -29,5 +30,12 @@ public class Main {
 
         garfield.setEdad(15);
         garfield.setSexo(Sexo.MACHO);
+    
+    
+    // ===========================================
+    Moneda moneda = Moneda.DOLAR;
+    System.out.println(10 * moneda.getValor() + " " + moneda.getSimbolo());
+    
+    
     }
 }

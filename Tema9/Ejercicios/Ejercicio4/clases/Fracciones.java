@@ -19,20 +19,21 @@ public class Fracciones {
     }
 
     public void simplificar(){
-        while ((this.numerador%7==0 && this.denominador%7==0) || (this.numerador%5==0 && this.denominador%5==0) || (this.numerador%3==0 && this.denominador%3==0) || (this.numerador%2==0 && this.denominador%2==0))
-        if (this.numerador%7==0 && this.denominador%7==0){
-            this.numerador /= 7;
-            this.denominador /= 7;
-        } else if (this.numerador%5==0 && this.denominador%5==0){
-            this.numerador /= 5;
-            this.denominador /= 5;
-        } else if (this.numerador%3==0 && this.denominador%3==0){
-            this.numerador /= 3;
-            this.denominador /= 3;
-        } else if (this.numerador%2==0 && this.denominador%2==0){
-            this.numerador /= 2;
-            this.denominador /= 2;
-        }
+        while ((this.numerador%7==0 && this.denominador%7==0) || (this.numerador%5==0 && this.denominador%5==0) || (this.numerador%3==0 && this.denominador%3==0) || (this.numerador%2==0 && this.denominador%2==0)) {
+            if (this.numerador%7==0 && this.denominador%7==0){
+                this.numerador /= 7;
+                this.denominador /= 7;
+            } else if (this.numerador%5==0 && this.denominador%5==0){
+                this.numerador /= 5;
+                this.denominador /= 5;
+            } else if (this.numerador%3==0 && this.denominador%3==0){
+                this.numerador /= 3;
+                this.denominador /= 3;
+            } else if (this.numerador%2==0 && this.denominador%2==0){
+                this.numerador /= 2;
+                this.denominador /= 2;
+            }
+        }    
     }
 
     /**
