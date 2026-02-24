@@ -16,8 +16,8 @@ public class Terminal {
 
     @Override
     public String toString(){
-        String cadena;
-        cadena = String.format("No %s - %ds de conversación",this.numero,this.tiempo);
-        return cadena;
+   
+        return String.format("No %s - %ds de conversación",this.numero,this.tiempo);
+
     }
 }
