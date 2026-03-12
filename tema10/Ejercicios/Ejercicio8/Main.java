@@ -18,7 +18,7 @@ public class Main {
             do {
                 // Generamos una nueva carta
                 carta = new Carta();
-            } while(baraja.equals(baraja))
+            } while(baraja.equals(baraja));
             // la añadimos a la baraja si no existe
             if (!baraja.contains(carta)) {
                 baraja.add(carta);
