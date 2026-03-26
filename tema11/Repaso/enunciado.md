@@ -41,4 +41,4 @@ HACER EN CASA:
 1. Crea una clase llamada Personaje con atributos nombre, vida y ataque.
 2. Crea metodos:
     a. estaVivo: devuekve si el enemigo aun tiene puntos de vida o no.
-    b. atacaar: que recibe un Personaje (enemigo). Este metodo encapsula la logica de ataque explicada anteriormente. DEJAD EL CUERPO DEL METODO VACIO.
+    b. atacar: que recibe un Personaje (enemigo). Este metodo encapsula la logica de ataque explicada anteriormente. DEJAD EL CUERPO DEL METODO VACIO.
