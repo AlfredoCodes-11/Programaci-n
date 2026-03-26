@@ -1,0 +1,7 @@
+Slime,20,5
+Goblin,35,8
+Lobo Rabioso,40,10
+Esqueleto,50,12
+Orco,65,15
+Troll de las Cavernas,85,20
+Minotauro,100,25
