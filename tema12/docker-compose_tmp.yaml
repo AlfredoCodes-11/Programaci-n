@@ -1,0 +1,13 @@
+# (YAML Ain't Markup Language)
+services:
+  db:
+    image: mysql:latest
+    container_name: prog_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: ejemplo     # nombre de la base de datos
+      MYSQL_ROOT_PASSWORD: root   # trabajaremos de momento con el usuario root
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: clave
+    ports:
+      - "3306:3306"               # puerto equipo:puerto contenedor
